@@ -1,8 +1,10 @@
 import "./App.css";
 import Navbar from "./components/Navbar/Navbar";
 import { useState } from "react";
-import Products from "./components/Products/Products";
 import Cart from "./components/Cart/Cart";
+import { Provider } from "react-redux";
+import store from "./redux/store";
+import ProductsContainer from "./components/Products/ProductsContainer";
 
 function App() {
   const [currentPage, setCurrentPage] = useState("products");
@@ -16,20 +18,17 @@ function App() {
   };
 
   return (
-    <div className="App">
+    <Provider store={store}>
       <Navbar
         handleHomeClick={handleHomeClick}
         handleCartClick={handleCartClick}
       />
 
       <main className="py-16">
-        {/* products */}
-        {currentPage === "products" && <Products />}
-
-        {/* cart */}
+        {currentPage === "products" && <ProductsContainer />}
         {currentPage === "cart" && <Cart />}
       </main>
-    </div>
+    </Provider>
   );
 }
 
