@@ -23,6 +23,12 @@ const ProductForm = () => {
     };
 
     dispatch(addProduct(product));
+
+    setName("");
+    setCategory("");
+    setImage("");
+    setPrice("");
+    setQuantity("");
   };
   return (
     <div className="formContainer">
@@ -34,7 +40,7 @@ const ProductForm = () => {
       >
         {/* <!-- product name --> */}
         <div className="space-y-2">
-          <label for="name">Product Name</label>
+          <label htmlFor="name">Product Name</label>
           <input
             className="addProductInput"
             id="lws-inputName"
@@ -45,7 +51,7 @@ const ProductForm = () => {
         </div>
         {/* <!-- product category --> */}
         <div className="space-y-2">
-          <label for="category">Category</label>
+          <label htmlFor="category">Category</label>
           <input
             className="addProductInput"
             id="lws-inputCategory"
@@ -56,7 +62,7 @@ const ProductForm = () => {
         </div>
         {/* <!-- product image url --> */}
         <div className="space-y-2">
-          <label for="image">Image Url</label>
+          <label htmlFor="image">Image Url</label>
           <input
             className="addProductInput"
             id="lws-inputImage"
@@ -69,7 +75,7 @@ const ProductForm = () => {
         <div className="grid grid-cols-2 gap-8 pb-4">
           {/* <!-- price --> */}
           <div className="space-y-2">
-            <label for="price">Price</label>
+            <label htmlFor="price">Price</label>
             <input
               className="addProductInput"
               type="number"
@@ -80,7 +86,7 @@ const ProductForm = () => {
           </div>
           {/* <!-- quantity --> */}
           <div className="space-y-2">
-            <label for="quantity">Quantity</label>
+            <label htmlFor="quantity">Quantity</label>
             <input
               className="addProductInput"
               type="number"

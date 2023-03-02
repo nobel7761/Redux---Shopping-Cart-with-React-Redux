@@ -1,4 +1,4 @@
-import { ADDPRODUCT /*  ADDPRODUCTTOCART */ } from "./actionTypes";
+import { ADDPRODUCT, ADDTOCART } from "./actionTypes";
 
 export const addProduct = (product) => {
   return {
@@ -7,9 +7,9 @@ export const addProduct = (product) => {
   };
 };
 
-/* export const addProductToCart = (productID) => {
+export const addToCart = (product) => {
   return {
-    type: ADDPRODUCTTOCART,
-    payload: productID,
+    type: ADDTOCART,
+    payload: product,
   };
-}; */
+};

@@ -2,10 +2,11 @@ import React from "react";
 import { useSelector } from "react-redux";
 
 const Products = () => {
-  const products = useSelector((state) => state.products);
+  const state = useSelector((state) => state.products);
+
   return (
     <div className="productContainer" id="lws-productContainer">
-      {products.map((product) => (
+      {state.products.map((product) => (
         <div className="lws-productCard" key={product.id}>
           <img className="lws-productImage" src={product.image} alt="product" />
           <div className="p-4 space-y-2">
@@ -19,7 +20,12 @@ const Products = () => {
                 QTY <span className="lws-quantity">{product.quantity}</span>
               </p>
             </div>
-            <button className="lws-btnAddToCart">Add To Cart</button>
+            <button
+              className="lws-btnAddToCart"
+              disabled={product.quantity <= 0 && true}
+            >
+              Add To Cart
+            </button>
           </div>
         </div>
       ))}
