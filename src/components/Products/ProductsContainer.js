@@ -1,13 +1,15 @@
 import React from "react";
-import Products from "./Products";
-import ProductForm from "./ProductForm";
+import ProductsForm from "./ProductsForm";
+import ProductsList from "./ProductsList";
 
 const ProductsContainer = () => {
   return (
-    <div className="productWrapper">
-      <Products />
-      <ProductForm />
-    </div>
+    <main className="py-16">
+      <div className="productWrapper">
+        <ProductsList />
+        <ProductsForm />
+      </div>
+    </main>
   );
 };
 

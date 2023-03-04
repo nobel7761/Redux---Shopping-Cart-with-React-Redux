@@ -1,33 +1,27 @@
-import "./App.css";
-import Navbar from "./components/Navbar/Navbar";
 import { useState } from "react";
-import Cart from "./components/Cart/Cart";
 import { Provider } from "react-redux";
-import store from "./redux/store";
+import "./App.css";
+import CartsContainer from "./components/Carts/CartsContainer";
+import Header from "./components/Header/Header";
 import ProductsContainer from "./components/Products/ProductsContainer";
+import store from "./redux/store";
 
 function App() {
-  const [currentPage, setCurrentPage] = useState("products");
+  const [selectedContainer, setSelectedContainer] = useState("products");
 
-  const handleHomeClick = () => {
-    setCurrentPage("products");
-  };
-
-  const handleCartClick = () => {
-    setCurrentPage("cart");
+  const handlerContainer = (container) => {
+    setSelectedContainer(container);
   };
 
   return (
     <Provider store={store}>
-      <Navbar
-        handleHomeClick={handleHomeClick}
-        handleCartClick={handleCartClick}
-      />
+      <Header handlerContainer={handlerContainer} />
 
-      <main className="py-16">
-        {currentPage === "products" && <ProductsContainer />}
-        {currentPage === "cart" && <Cart />}
-      </main>
+      {selectedContainer === "products" ? (
+        <ProductsContainer />
+      ) : (
+        <CartsContainer />
+      )}
     </Provider>
   );
 }

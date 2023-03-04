@@ -1,13 +1,13 @@
 import React from "react";
 import CartForm from "./CartForm";
-import CartProducts from "./CartProducts";
+import CartList from "./CartList";
 
-const Cart = () => {
+const CartsContainer = () => {
   return (
     <div className="container 2xl:px-8 px-2 mx-auto">
       <h2 className="mb-8 text-xl font-bold">Shopping Cart</h2>
       <div className="cartListContainer">
-        <CartProducts />
+        <CartList />
 
         <CartForm />
       </div>
@@ -15,4 +15,4 @@ const Cart = () => {
   );
 };
 
-export default Cart;
+export default CartsContainer;
