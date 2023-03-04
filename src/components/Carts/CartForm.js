@@ -1,14 +1,6 @@
 import React from "react";
-import { useSelector } from "react-redux";
 
-const CartForm = () => {
-  const carts = useSelector((state) => state.products.carts);
-  const items = carts.filter((item) => item.quantity > 0);
-  const totalAmount = items
-    .map((item) => item.price * item.quantity)
-    .reduce((totalAmount, itemTotalPrice) => totalAmount + itemTotalPrice, 0);
-
-  console.log("totalAmount", totalAmount);
+const CartForm = ({ totalAmount }) => {
   return (
     <div>
       {/* <!-- Bill Details --> */}
